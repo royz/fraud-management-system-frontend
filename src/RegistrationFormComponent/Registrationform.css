@@ -1,0 +1,34 @@
+.form-container {
+  position: absolute;
+  top: 1vh;
+  background: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+.bg {
+  background: url("https://jumbotech.net/wp-content/uploads/2016/03/7-Best-Pattern-of-Background-Images-for-Websites-1-Dark-Wood.jpg")
+    no-repeat;
+  width: 100%;
+  height: 150vh;
+  background-size: 200%;
+  opacity: 0.9;
+  background-color: rgb(159, 201, 214);
+}
+
+@media screen and (max-width: 1050px) {
+  .bg {
+    background-size: 300%;
+  }
+}
+.button {
+  margin-top: 15px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(11, 224, 125);
+}
