@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
-import { useForm } from "react-hook-form";
 
 export const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const [register, setRegister] = useState({
+    username: "",
+    password: "",
+  });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const handleChange = (event) => {
+    setRegister({ ...register, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(register);
   };
 
   return (
@@ -15,7 +22,7 @@ export const Login = () => {
         <section className="col 12 col-sm-6 col-md-4">
           <form
             className="form-container p-6 w-40 mx-auto"
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit}
           >
             <p id="wlcm-text" className="h1 font-link  ">
               <strong>Welcome</strong>
@@ -28,7 +35,8 @@ export const Login = () => {
                 name="username"
                 aria-describedby="userNameHelp"
                 placeholder="Enter username"
-                {...register("username")}
+                value={register.username}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
@@ -39,7 +47,8 @@ export const Login = () => {
                 name="password"
                 placeholder="Password"
                 required
-                {...register("password")}
+                value={register.password}
+                onChange={handleChange}
               />
             </div>
 
