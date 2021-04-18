@@ -1,0 +1,50 @@
+.form-container {
+    position: absolute;
+    top: 1vh;
+    background: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+}
+
+.bg {
+    width: 100%;
+    opacity: 0.9;
+    /*background-image: url("https://jumbotech.net/wp-content/uploads/2016/03/7-Best-Pattern-of-Background-Images-for-Websites-1-Dark-Wood.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    background: linear-gradient(135deg, #350a4f, #2838c1);
+}
+
+.button {
+    margin-top: 15px;
+}
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(11, 224, 125);
+}
+
+select {
+    padding: 0;
+    width: 100%;
+    height: 56px;
+    border-radius: 6px;
+}
+
+input[type="date"], select {
+    margin-top: 0;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
