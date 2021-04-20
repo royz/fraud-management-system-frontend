@@ -1,14 +1,22 @@
-#navbar {
-    height: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans&display=swap');
+
+body {
+    min-height: 100vh;
+    background: whitesmoke;
 }
 
-main {
-    min-height: calc(100vh - 45px);
+#navbar {
+    height: 50px;
+}
+
+#main-content {
+    min-height: calc(100vh - 110px);
     height: 100%;
+    padding: 30px 10px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-footer {
-    height: 15px;
+#footer {
+    height: 40px;
 }

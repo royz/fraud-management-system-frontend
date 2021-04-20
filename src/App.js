@@ -1,20 +1,23 @@
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
-import Login from './components/Login/Login'
-import Register from './components/Register/Register';
-import Navbar from "./components/Footer/Navbar";
-import Footer from "./components/Navbar/Footer";
+import Login from './components/auth/Login'
+import Register from './components/auth/Register';
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   return <Router>
     <Navbar/>
-    <main>
+    <div id="main-content" className="container">
       <Switch>
         <Route exact path='/' component={Login}/>
         <Route exact path='/login' component={Login}/>
+        <Route exact path='/admin' render={() => <Login isAdminLogin={true}/>}/>
         <Route exact path={'/register'} component={Register}/>
+        <Route exact path={'/dashboard'} component={Dashboard}/>
       </Switch>
-    </main>
+    </div>
     <Footer/>
   </Router>
 }
