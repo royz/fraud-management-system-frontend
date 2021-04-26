@@ -5,6 +5,10 @@ import Register from './components/auth/Register';
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
+import ForgotPassword from "./components/auth/ForgotPassword";
+import ResetPassword from "./components/auth/ResetPassword";
+import ForgotId from "./components/auth/ForgotId";
+import Frauds from "./components/frauds/Frauds";
 
 function App() {
   return <Router>
@@ -16,6 +20,10 @@ function App() {
         <Route exact path='/admin' render={() => <Login isAdminLogin={true}/>}/>
         <Route exact path={'/register'} component={Register}/>
         <Route exact path={'/dashboard'} component={Dashboard}/>
+        <Route exact path={'/forgot-password'} component={ForgotPassword}/>
+        <Route exact path={'/reset-password'} component={ResetPassword}/>
+        <Route exact path={'/forgot-userid'} component={ForgotId}/>
+        <Route exact path={'/frauds'} component={Frauds}/>
       </Switch>
     </div>
     <Footer/>

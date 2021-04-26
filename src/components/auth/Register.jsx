@@ -1,18 +1,88 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import StyledAuth from "./auth.styles";
+import {question1, question2, question3} from "../../utils/securityQuestions";
 
 const Register = (props) => {
   const [form, setForm] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    contact: "",
-    dob: "",
-    gender: "",
-    password: "",
-    confirmPassword: "",
+    firstname: '',
+    lastname: '',
+    email: '',
+    contact: '',
+    dob: null,
+    gender: null,
+    password: '',
+    confirmPassword: '',
+    q1: '',
+    q2: '',
+    q3: '',
   });
+
+  const defaultErrors = {
+    firstname: null,
+    lastname: null,
+    email: null,
+    contact: null,
+    dob: null,
+    gender: null,
+    password: null,
+    confirmPassword: null,
+    q1: null,
+    q2: null,
+    q3: null,
+  }
+
+  const [errors, setErrors] = useState(defaultErrors);
+
+  const setError = (field, message) => {
+    setErrors({...errors, [field]: message})
+  }
+
+
+  const validateForm = () => {
+    // first reset all error values
+    setErrors(defaultErrors)
+
+    if (form.firstname.length === 0) {
+      setError('firstname', 'This field cannot be empty')
+    }
+    if (form.lastname.length === 0) {
+      setError('lastname', 'This field cannot be empty')
+    }
+    if (!form.email.match(/[\w-.]+@[\w-.]+\.[\w]+/)) {
+      setError('email', 'Enter a valid email')
+    }
+    if (!form.contact.match(/[\d- +]{9,}/)) {
+      setError('contact', 'Enter a valid phone number')
+    }
+    if (!form.dob(/[\d- +]{9,}/)) {
+      setError('dob', 'Enter a valid date of birth')
+    }
+    if (!form.gender) {
+      setError('gender', 'Select a gender')
+    }
+    if (form.password.length < 6) {
+      setError('password', 'Password must have at least 6 characters')
+    }
+    if (form.password !== form.confirmPassword) {
+      setError('confirmPassword', 'Passwords do not match')
+    }
+    if (form.q1.length === 0) {
+      setError('q1', 'Enter a valid answer')
+    }
+    if (form.q2.length === 0) {
+      setError('q2', 'Enter a valid answer')
+    }
+    if (form.q3.length === 0) {
+      setError('q3', 'Enter a valid answer')
+    }
+
+    for (const [key, value] of Object.entries(errors)) {
+      if (value) return false
+    }
+    return true
+  }
+
 
   const handleChange = (event) => {
     setForm({...form, [event.target.name]: event.target.value});
@@ -23,7 +93,6 @@ const Register = (props) => {
     console.log(form);
   };
 
-
   return (
     <StyledAuth>
       <form
@@ -31,7 +100,6 @@ const Register = (props) => {
       >
         <h4>Create an Account</h4>
 
-        {/*{/!* {submitted && valid ? <div className="success-message"> form is submitted</div> : null} *!/}*/}
         <div className="mb-3">
           <input
             type="text"
@@ -143,6 +211,40 @@ const Register = (props) => {
           {/*{submitted && !values.confirmpassword ? (
               <span className="text-danger">*confirm your password</span>
             ) : null}*/}
+        </div>
+
+        <div className="mb-3">
+          <label>Q1: {question1}</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Answer"
+            name="q1"
+            value={form.q1}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Q2: {question2}</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Answer"
+            name="q2"
+            value={form.q2}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Q3: {question3}</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Answer"
+            name="q3"
+            value={form.q3}
+            onChange={handleChange}
+          />
         </div>
 
         <button type="submit" className="btn btn-primary btn-lg w-100">

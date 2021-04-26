@@ -24,6 +24,7 @@ const StyledAuth = styled.div`
 
     label {
       padding-left: 6px;
+      color: #134170;
     }
   }
 
@@ -63,7 +64,7 @@ const StyledAuth = styled.div`
 
   .redirect-link {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     a {
       text-decoration: none;
