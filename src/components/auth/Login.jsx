@@ -4,18 +4,18 @@ import {Link} from "react-router-dom";
 
 
 const Login = ({isAdminLogin}) => {
-  const [register, setRegister] = useState({
+  const [form, setForm] = useState({
     username: "",
     password: "",
   });
 
   const handleChange = (event) => {
-    setRegister({...register, [event.target.name]: event.target.value});
+    setForm({...form, [event.target.name]: event.target.value});
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(register);
+    console.log(form);
   };
 
   return <StyledAuth>
@@ -32,7 +32,7 @@ const Login = ({isAdminLogin}) => {
           name="username"
           aria-describedby="userNameHelp"
           placeholder="Enter username"
-          value={register.username}
+          value={form.username}
           onChange={handleChange}
         />
       </div>
@@ -44,7 +44,7 @@ const Login = ({isAdminLogin}) => {
           name="password"
           placeholder="Password"
           required
-          value={register.password}
+          value={form.password}
           onChange={handleChange}
         />
       </div>
@@ -69,6 +69,8 @@ const Login = ({isAdminLogin}) => {
           ? <Link to="/login">Fraud Analysis Personnel Login</Link>
           : <Link to="/admin">Admin Login</Link>
         }
+        <br/>
+        <Link to="/forgot-userid">Forgot UserID</Link> | <Link to="/forgot-password">Forgot Password</Link>
       </div>
     </form>
   </StyledAuth>
