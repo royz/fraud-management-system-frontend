@@ -254,11 +254,6 @@ const ClaimsFraud = () => {
         <button className="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#cardEditModal" onClick={startAddCard}>Add new Fraud
         </button>
-        <label>From</label>
-        <input type="date" name="from" id="from-date" value={filter.from} onChange={updateFilter}/>
-        <label>To</label>
-        <input type="date" name="to" id="to-date" value={filter.to} onChange={updateFilter}/>
-        <button className="btn btn-primary" onClick={filterByDate}>Filter Frauds</button>
       </div>
     </div>
     <table className="table">

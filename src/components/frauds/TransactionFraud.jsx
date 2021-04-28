@@ -5,16 +5,32 @@ const TransactionFraud = props => {
   const [frauds, setFrauds] = useState([])
 
   useEffect(() => {
-    let newFrauds = []
-    for (let i = 0; i < 12; i++) {
-      newFrauds.push({
-        transactionNo: '6234923640230',
-        cardHolder: 'Piyush Kumar',
-        attempts: 7,
-        fraudLevel: 3,
-        date: '11/03/2021'
-      })
-    }
+    let newFrauds = [{
+      transactionNo: '43253640230',
+      cardHolder: 'Piyush Kumar',
+      attempts: 4,
+      fraudLevel: 3,
+      date: '11/03/2021'
+    }, {
+      transactionNo: '5433640230',
+      cardHolder: 'Rajesh Goyel',
+      attempts: 4,
+      fraudLevel: 5,
+      date: '21/07/2020'
+    }, {
+      transactionNo: '45640230',
+      cardHolder: 'Sukumar Das',
+      attempts: 7,
+      fraudLevel: 3,
+      date: '11/03/2021'
+    }, {
+      transactionNo: '923640230',
+      cardHolder: 'Jaydev Kar',
+      attempts: 2,
+      fraudLevel: 5,
+      date: '13/02/2009'
+    }]
+
     setFrauds(newFrauds)
   }, [])
 
