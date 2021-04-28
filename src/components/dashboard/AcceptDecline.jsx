@@ -31,7 +31,7 @@ const Div = styled.div`
   
   .no-pending {
     text-align: center;
-    margin: 50px 0;
+    margin: 20px 0 60px 0;
   }
 `
 
