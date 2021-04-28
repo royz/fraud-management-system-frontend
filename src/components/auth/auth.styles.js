@@ -70,6 +70,14 @@ const StyledAuth = styled.div`
       text-decoration: none;
     }
   }
+
+  .error {
+    background: #f8dbcb;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 0.8rem;
+    color: #555555;
+  }
 `
 
 export default StyledAuth
