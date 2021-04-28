@@ -18,9 +18,6 @@ const Navbar = props => {
           <li className="nav-item">
             <Link className="nav-link" to="/dashboard">Dashboard</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/frauds">Frauds</Link>
-          </li>
           {!user?.loggedIn
             ? <>
               <li className="nav-item">

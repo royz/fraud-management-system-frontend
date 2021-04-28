@@ -46,7 +46,6 @@ function App() {
           <Route exact path={'/forgot-password'} component={ForgotPassword}/>
           <Route exact path={'/reset-password'} component={ResetPassword}/>
           <Route exact path={'/forgot-userid'} component={ForgotId}/>
-          <Route exact path={'/frauds'} component={Frauds}/>
         </Switch>
       </div>
       <Footer/>
